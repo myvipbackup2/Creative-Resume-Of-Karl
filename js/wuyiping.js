@@ -25,12 +25,12 @@ var O_farerMountain1 = document.getElementById('layer-hen-5');//远山
 var OC_seawoodboard = new C_actor('woodbord2');//海 木牌
 var O_Sea = document.getElementById('layer-sea');
 var O_sky = document.getElementById('skyAnimation');
-var O_DaF=  document.getElementById('dock-and-floor');
-var O_DaW=  document.getElementById('dock-wood');
+var O_DaF = document.getElementById('dock-and-floor');
+var O_DaW = document.getElementById('dock-wood');
 O_Sea.Onoff = false;
 var O_steel = document.getElementById('layer-dock');
 var O_rocketAudio = document.getElementById('rocketAudio');
-O_steel.Onoff=true;
+O_steel.Onoff = true;
 var O_Baiduyun = document.getElementById('Baiduyun');
 var walksteps = 0;
 var onoff = false;
@@ -61,7 +61,7 @@ var words = [
 var wordTimeOut = null;
 var wordTimer = null;
 var wordTimer2 = null;
-var iWord =document.getElementById('iWord');
+var iWord = document.getElementById('iWord');
 O_about.Onoff = true;
 O_csky5.Onoff = false;
 var n = 1;
@@ -71,37 +71,37 @@ var n = 1;
 //O_Car1Imgsrc.src = '../img/dataDEMO/construction/Car.png';
 //记录当前 创口里面HEAD层真实的位置   用于适配 所有屏幕用的
 window.onresize = positionReset;  //添加 窗口改变时 改变人物位置
-setInterval(function(){
+setInterval(function () {
     console.log(walksteps)
-},100);
+}, 100);
 
 var Aimg = document.getElementsByClassName('forestIMG');
-for (var i = 0;i<Aimg.length;i++){
+for (var i = 0; i < Aimg.length; i++) {
     Aimg[i].src = newimages[4].src;
 }
 
 var Oimg_dadi = document.getElementsByClassName('dadi')[0];
-Oimg_dadi.style.backgroundImage = 'url('+newimages[5].src+')';
+Oimg_dadi.style.backgroundImage = 'url(' + newimages[5].src + ')';
 
 var Oimg_cao = document.getElementsByClassName('cao')[0];
-Oimg_cao.style.backgroundImage = 'url('+newimages[6].src+')';
+Oimg_cao.style.backgroundImage = 'url(' + newimages[6].src + ')';
 var Aimg_treeA = document.getElementsByClassName('tree-A');
-for ( i = 0;i<Aimg_treeA.length;i++){
-    Aimg_treeA[i].style.backgroundImage = 'url('+newimages[7].src+')';
+for (i = 0; i < Aimg_treeA.length; i++) {
+    Aimg_treeA[i].style.backgroundImage = 'url(' + newimages[7].src + ')';
 }
 
 var Aimg_treeB = document.getElementsByClassName('tree-B');
-for ( i = 0;i<Aimg_treeB.length;i++){
-    Aimg_treeB[i].style.backgroundImage = 'url('+newimages[8].src+')';
+for (i = 0; i < Aimg_treeB.length; i++) {
+    Aimg_treeB[i].style.backgroundImage = 'url(' + newimages[8].src + ')';
 }
 var Aimg_treeC = document.getElementsByClassName('tree-C');
-for ( i = 0;i<Aimg_treeC.length;i++){
-    Aimg_treeC[i].style.backgroundImage = 'url('+newimages[9].src+')';
+for (i = 0; i < Aimg_treeC.length; i++) {
+    Aimg_treeC[i].style.backgroundImage = 'url(' + newimages[9].src + ')';
 }
 
 
 var titleKarl = document.getElementById('title-karl');
-titleKarl.style.backgroundImage = 'url('+newimages[10].src+')';
+titleKarl.style.backgroundImage = 'url(' + newimages[10].src + ')';
 
 var Oimg_farmount1 = document.getElementById('far-mountain-1');
 Oimg_farmount1.src = newimages[11].src;
@@ -126,12 +126,11 @@ var Oimg_wood = document.getElementById('woodbordIMG');
 Oimg_wood.src = newimages[16].src;
 
 
-var Oimg_plants =  document.getElementById('plants');
+var Oimg_plants = document.getElementById('plants');
 var Aimg_mill = Oimg_plants.getElementsByTagName('img');
-for ( i = 0;i<Aimg_mill.length;i++){
-    Aimg_mill[i].style.backgroundImage = 'url('+newimages[17].src+')';
+for (i = 0; i < Aimg_mill.length; i++) {
+    Aimg_mill[i].style.backgroundImage = 'url(' + newimages[17].src + ')';
 }
-
 
 
 O_Tinnyplane.style.left = '6100px';
@@ -147,14 +146,14 @@ F_meettheAbout();
 
 function Walking() {//这个函数要 加工一下 因为就是这函数带动全部函数运动
     OKarl2.style.display = "block";
-    O_karl.className= "walkAnimation walk_" +0;
+    O_karl.className = "walkAnimation walk_" + 0;
     F_addKeyListener(walkstyle1, walkstyle2, walkstyle2);
 }
 
 function Walking2() {
     OKarl2.style.display = "block";
-    O_karl.style.backgroundImage= 'url('+newimages[3].src+')';
-    O_karl.className= "walkAnimation walk_" +0;
+    O_karl.style.backgroundImage = 'url(' + newimages[3].src + ')';
+    O_karl.className = "walkAnimation walk_" + 0;
     F_addKeyListener(walkstyle1, walkstyle5, walkstyle5);
 
 }
@@ -221,10 +220,6 @@ function F_meet() {  //判断 是否运动到触发点
 // }
 
 
-
-
-
-
 function F_Sbleft(obj) {
     return $(obj).offset().left + $(obj).width();
 }
@@ -232,14 +227,12 @@ function F_Sbleft(obj) {
 /*面向对象来改进*/
 
 
-
-
-
 function walkstyle1(ev) {
     if (ev.keyCode == "32") {
         walksteps++;
         O_karl.className = "walkAnimation walk_" + (walksteps % 4);
-        clearInterval(timer2);hideKeynotice();
+        clearInterval(timer2);
+        hideKeynotice();
         //console.log($(O_CaodiAndDadi).offset().left);
     }
     ev.preventDefault();
@@ -257,81 +250,82 @@ function walkstyle2(ev) {
     if (onoff) {
         walksteps++;
         O_karl.className = "walkAnimation walk_" + (walksteps % 4);
-        clearInterval(timer2);hideKeynotice();
+        clearInterval(timer2);
+        hideKeynotice();
     } else {
         walksteps = walksteps <= 0 ? walksteps = 0 : walksteps - 1;
         O_karl.className = "walkAnimation walk_" + (walksteps % 4);
-        clearInterval(timer2);hideKeynotice();
+        clearInterval(timer2);
+        hideKeynotice();
     }
 }
 
 
+function walkstyle4(ev) {
 
-function walkstyle4(ev){
+    if (ev.wheelDelta) {//Chrome下,e.wheelDelta<0向下滚动
+        onoff = ev.wheelDelta < 0 ? true : false;
+    }
+    if (ev.detail) {//火狐下
+        onoff = ev.detail > 0 ? true : false;
+    }
 
-        if (ev.wheelDelta) {//Chrome下,e.wheelDelta<0向下滚动
-            onoff = ev.wheelDelta < 0 ? true : false;
+    if (onoff) {
+        walksteps++;
+        F_meettheWall(O_steel, false, 0);
+        if (!O_steel.Onoff) {
+            clearInterval(OT_karlswimAnimation);
+            $(O_karl).stop();
+            document.removeEventListener('keyup', F_floatdown);
+            // O_steel.Onoff = true;
+            F_removeKeyListener(walkstyle3, walkstyle4, walkstyle4, function () {
+                F_shuChangeback2();
+            });
         }
-        if (ev.detail) {//火狐下
-            onoff = ev.detail > 0 ? true : false;
+        if (!O_Sea.Onoff) {
+            $(O_karl).stop().animate({'bottom': '100'}, 2000, "easeInCubic"); //附上上来
+            $('#bubles').stop().animate({'-24': '76'}, 2000, "easeInCubic");
+            O_Sea.Onoff = true;
         }
 
-        if (onoff) {
-            walksteps++;
-            F_meettheWall(O_steel,false,0);
-            if(!O_steel.Onoff){
-                clearInterval( OT_karlswimAnimation);
-                $(O_karl).stop();
-                document.removeEventListener('keyup',F_floatdown);
-                // O_steel.Onoff = true;
-                F_removeKeyListener(walkstyle3,walkstyle4,walkstyle4,function () {
-                    F_shuChangeback2();
-                });
-            }
-            if(!O_Sea.Onoff) {
-                $(O_karl).stop().animate({'bottom': '100'}, 2000, "easeInCubic"); //附上上来
-                $('#bubles').stop().animate({'-24': '76'}, 2000, "easeInCubic");
-                O_Sea.Onoff=true;
-            }
+    } else {
+        F_meettheWall(O_CaodiAndDadi, true, 0);
 
+        //ar OT_shifouzhuangdaoleludi=
+        if (walksteps <= 155) {
+            walksteps += 0;
         } else {
-        F_meettheWall(O_CaodiAndDadi,true,0);
-
-            //ar OT_shifouzhuangdaoleludi=
-            if (walksteps<=155){
-                walksteps +=0;
-            }else{
-                walksteps = walksteps - 1;
-                if(O_Sea.Onoff) {
-                    // console.log('down');
-                    $(O_karl).stop().animate({'bottom': '0'}, 3000, "easeInCubic");
-                    $('#bubles').stop().animate({'top': '76'}, 3000, "easeInCubic");
-                    O_Sea.Onoff=false;
-                }
+            walksteps = walksteps - 1;
+            if (O_Sea.Onoff) {
+                // console.log('down');
+                $(O_karl).stop().animate({'bottom': '0'}, 3000, "easeInCubic");
+                $('#bubles').stop().animate({'top': '76'}, 3000, "easeInCubic");
+                O_Sea.Onoff = false;
             }
         }
     }
+}
 
 function walkstyle3(ev) {
     if (ev.keyCode == "32") {
         walksteps++;
-        F_meettheWall(O_steel,false,0);
-        if(!O_steel.Onoff){
-            clearInterval( OT_karlswimAnimation);
+        F_meettheWall(O_steel, false, 0);
+        if (!O_steel.Onoff) {
+            clearInterval(OT_karlswimAnimation);
             $(O_karl).stop();
 
-             O_steel.Onoff = true;
-            document.removeEventListener('keyup',F_floatdown);// 取消监听  float
-            F_removeKeyListener(walkstyle3,walkstyle4,walkstyle4,function () {//取消监听 游泳事件
+            O_steel.Onoff = true;
+            document.removeEventListener('keyup', F_floatdown);// 取消监听  float
+            F_removeKeyListener(walkstyle3, walkstyle4, walkstyle4, function () {//取消监听 游泳事件
                 F_shuChangeback2();//改变 背景
             });
 
             // console.log('撞墙了');
         }
-        if(!O_Sea.Onoff) {
+        if (!O_Sea.Onoff) {
             $(O_karl).stop().animate({'bottom': '100'}, 2000, "easeInCubic"); //附上上来
             $('#bubles').stop().animate({'top': '-24'}, 2000, "easeInCubic");
-            O_Sea.Onoff=true;
+            O_Sea.Onoff = true;
         }
     }
     ev.preventDefault();
@@ -353,9 +347,9 @@ function walkstyle5(ev) {
         O_karl.className = "walkAnimation walk_" + (walksteps % 4);
     } else {
 
-        if (walksteps<=255){
-            walksteps +=0;
-        }else{
+        if (walksteps <= 255) {
+            walksteps += 0;
+        } else {
             walksteps = walksteps - 1;
             O_karl.className = "walkAnimation walk_" + (walksteps % 4);
         }
@@ -363,17 +357,17 @@ function walkstyle5(ev) {
 }
 
 
-function F_floatwheswim(){  //有用的时候稍微浮起来 一点 f放手 又飘下去
-    document.addEventListener('keyup',F_floatdown)
+function F_floatwheswim() {  //有用的时候稍微浮起来 一点 f放手 又飘下去
+    document.addEventListener('keyup', F_floatdown)
 }
 
-function F_floatdown(){
+function F_floatdown() {
     //console.log('down');
-    if(O_Sea.Onoff) {
+    if (O_Sea.Onoff) {
         // console.log('down');
         $(O_karl).stop().animate({'bottom': '0'}, 3000, "easeInCubic");
         $('#bubles').stop().animate({'top': '76'}, 3000, "easeInCubic");
-        O_Sea.Onoff=false;
+        O_Sea.Onoff = false;
     }
 }
 
@@ -394,7 +388,7 @@ function F_JumpInTheSea(Callback) {
         i++;
     }, 30);
 
-    Callback&&Callback();
+    Callback && Callback();
 
 }
 
@@ -409,18 +403,18 @@ function F_shuChangeback() {  //海平面向上
     positionKarl();
     O_karl.style.maxWidth = '160px';
     O_karl.style.marginBottom = "-10px";
-    O_karl.style.backgroundImage= 'url('+newimages[1].src+')';
+    O_karl.style.backgroundImage = 'url(' + newimages[1].src + ')';
     O_karl.style.backgroundRepeat = 'none-repeat';
-    O_Sea.style.top= "90%";
+    O_Sea.style.top = "90%";
 
     $(CaodiAndDadi).animate({'top': "-75%"}, 'slow', "easeOutExpo", function () {
         $('#bubles').addClass('ALLdisplayshow');
         $(O_shanAndbird).addClass('displaynone');
         //$('#woodbord2').addClass('displaynone');
-        $(O_karl).animate({'marginBottom':20}, 'slow', "linear", function () {
+        $(O_karl).animate({'marginBottom': 20}, 'slow', "linear", function () {
             F_swimAnimation();
             F_meet1.meet();
-            F_addKeyListener(walkstyle3,walkstyle4,walkstyle4,function () {
+            F_addKeyListener(walkstyle3, walkstyle4, walkstyle4, function () {
                 F_floatwheswim();
 
             })
@@ -430,14 +424,13 @@ function F_shuChangeback() {  //海平面向上
 }
 
 
-
 function F_swimAnimation() { //游泳动画
     var i = 0;
     O_karl.style.marginBottom = '40px';
     O_karl.style.marginLeft = '-67px';
-    O_karl.style.backgroundImage= 'url('+newimages[2].src+')';
+    O_karl.style.backgroundImage = 'url(' + newimages[2].src + ')';
     O_karl.className = "swim2_" + i;
-     OT_karlswimAnimation = setInterval(function () {
+    OT_karlswimAnimation = setInterval(function () {
         i++;
         if (i >= 39) {
             i = 0;
@@ -451,53 +444,41 @@ var Fish2 = new C_fish('Fish2');
 var Fish3 = new C_fish('Fish3');
 /*定义鱼游泳动画*/
 
-var F_meet1 =new F_crashActor('Web-Software',function () {
+var F_meet1 = new F_crashActor('Web-Software', function () {
     Fish1.Animate();
     F_displayWords(words[4]);
     F_meet2.meet();
 });
 
 
-var F_meet2 =new F_crashActor('Coding',function () {
+var F_meet2 = new F_crashActor('Coding', function () {
     Fish2.Animate();
     F_meet3.meet();
 });
 
 
-var F_meet3 =new F_crashActor('OtherCoding',function () {
+var F_meet3 = new F_crashActor('OtherCoding', function () {
     Fish3.Animate();
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-function F_addKeyListener(a, b, c,Callback) {
+function F_addKeyListener(a, b, c, Callback) {
     document.addEventListener('keydown', a);  //直接解除这些个绑定 不就行了吗!!!
     document.addEventListener('mousewheel', b);
     document.addEventListener('DOMMouseScroll', c);
-    Callback&&Callback();
+    Callback && Callback();
 }
 
-function F_removeKeyListener(a, b, c,Callback) {
+function F_removeKeyListener(a, b, c, Callback) {
     document.removeEventListener('keydown', a);  //直接解除这些个绑定 不就行了吗!!!
     document.removeEventListener('mousewheel', b);
     document.removeEventListener('DOMMouseScroll', c);
-    Callback&&Callback();
+    Callback && Callback();
 }
 
 
-function F_meettheWall(obj,LR,long){
-    if(LR) {
+function F_meettheWall(obj, LR, long) {
+    if (LR) {
 
         var n = parseFloat($(O_karl).offset().left) + long;
         obj.timer = setInterval(function () {
@@ -508,12 +489,12 @@ function F_meettheWall(obj,LR,long){
                 obj.Onoff = true;
             }
         }, 20);
-    }else{
-        var n = parseFloat($(O_karl).offset().left) +parseFloat(O_karl.offsetWidth) ;
+    } else {
+        var n = parseFloat($(O_karl).offset().left) + parseFloat(O_karl.offsetWidth);
         // console.log(n+'-----------'+parseFloat($(obj).offset().left));
         // console.log('钢板or火箭'+parseFloat($(obj).offset().left));
         obj.timer = setInterval(function () {
-            if (n >= parseFloat($(obj).offset().left)+long ) {
+            if (n >= parseFloat($(obj).offset().left) + long) {
                 clearInterval(obj.timer);
                 obj.Onoff = false;//如果从左到右 的时候
             } else {
@@ -523,65 +504,65 @@ function F_meettheWall(obj,LR,long){
     }
 }
 
-function swimTOwalk(){
-    var i=0;
-    $(O_karl).animate({'bottom': 0+'px'}, 'fast', "easeInCirc");
-    var OT_swimTOwalktimer = setInterval(function(){
-        if(i<=10){walksteps++}
-        O_karl.src ='img/swimTOwalk/swimTOwalk_'+i+'.png';
-        if(i>=59){clearInterval(OT_swimTOwalktimer);
+function swimTOwalk() {
+    var i = 0;
+    $(O_karl).animate({'bottom': 0 + 'px'}, 'fast', "easeInCirc");
+    var OT_swimTOwalktimer = setInterval(function () {
+        if (i <= 10) {
+            walksteps++
+        }
+        O_karl.src = 'img/swimTOwalk/swimTOwalk_' + i + '.png';
+        if (i >= 59) {
+            clearInterval(OT_swimTOwalktimer);
             // console.log('开启运动模式');
 
             Walking2();  //此处 开启在船坞上面的判断
             F_meetsteelRight();
-        $('#smalldog').css({'left':'0'});
-            F_meettheWall(O_rocket,false,180);
+            $('#smalldog').css({'left': '0'});
+            F_meettheWall(O_rocket, false, 180);
             F_meetsteelRight();
-            var OT_rocketTimer1 = setInterval(function(){
+            var OT_rocketTimer1 = setInterval(function () {
                 // console.log(parseFloat(O_karl.offsetLeft) +parseFloat(O_karl.offsetWidth)+'karl');
                 // console.log('火箭'+parseFloat($(O_rocket).offset().left));
-                if(!O_rocket.Onoff){
-                 //  F_rocketFly();  先是人物 跳上 火箭  这个后面调节
-                 //背景声音响起
-                 //火箭起飞
-                    $(O_karl).animate({'bottom':'100px'},100,'easeOutCirc');
+                if (!O_rocket.Onoff) {
+                    //  F_rocketFly();  先是人物 跳上 火箭  这个后面调节
+                    //背景声音响起
+                    //火箭起飞
+                    $(O_karl).animate({'bottom': '100px'}, 100, 'easeOutCirc');
                     clearInterval(OT_rocketTimer1);
                     var i = 0;
-                    var O_karlTimer = setInterval(function(){
+                    var O_karlTimer = setInterval(function () {
                         i++;
-                        if(i<=19){
-                            O_karl.className = 'gotorocket gotorocket_'+i;
-                        }else {
+                        if (i <= 19) {
+                            O_karl.className = 'gotorocket gotorocket_' + i;
+                        } else {
                             clearInterval(O_karlTimer);
                             O_karl.className = 'hide';
                         }
 
-                    },30);
+                    }, 30);
                     F_removeKeyListener(walkstyle1, walkstyle5, walkstyle5);
                     O_rocketAudio.play();
                     F_displayWords(words[8]);
                     setTimeout(function () {
                         F_rocketFly();
 
-                    },7000);
+                    }, 7000);
 
-                    O_rocket.Onoff=true;
+                    O_rocket.Onoff = true;
                 }
 
-            },20)
+            }, 20)
 
         }
         i++;
-    },15);
+    }, 15);
 
 
-
-        }
-
+}
 
 
-
-function F_shuChangeback2(){
+function F_shuChangeback2() {
     positionKarl();
     O_meetCar1.meet();//判断 百度云
     O_karl.style.maxWidth = '160px';
@@ -593,18 +574,15 @@ function F_shuChangeback2(){
     //O_Sea.style.top= "80%";
     //$(O_Sea).animate({'top': "80%"}, 'slow', "easeOutExpo");
     swimTOwalk();
-    $(CaodiAndDadi).animate({'top': 0+'px'}, 500, "linear",function () {
+    $(CaodiAndDadi).animate({'top': 0 + 'px'}, 500, "linear", function () {
 
     });
-
-
-
 
 
 }
 
 /*自制检测碰撞对象*/
-function F_crashActor(id,cal,num){
+function F_crashActor(id, cal, num) {
     this.object = document.getElementById(id);
     this.Onoff = false;
     this.num = num;
@@ -615,19 +593,19 @@ function F_crashActor(id,cal,num){
 F_crashActor.prototype.meet = function () {
     var that = this;
     var n = 0;
-    if(this.num){
-       n =this.num;
-    }else {
-        n =0 ;
+    if (this.num) {
+        n = this.num;
+    } else {
+        n = 0;
     }
 
-    F_meettheWall(that.object,false,n);
+    F_meettheWall(that.object, false, n);
     that.timer = setInterval(function () {
-        if(!that.object.Onoff){
+        if (!that.object.Onoff) {
             clearInterval(that.timer);
-            that.callback&&that.callback();
+            that.callback && that.callback();
         }
-    },20);
+    }, 20);
 }
 
 /*鱼移动动画*/
@@ -637,18 +615,17 @@ function C_fish(clas) {
 
 C_fish.prototype.Animate = function () {
     var that = this;
-    var i=0;
-    that.timer = setInterval(function(){
+    var i = 0;
+    that.timer = setInterval(function () {
 
         that.object[i].style.left = '0';
         i++;
-        if(i>=that.object.length){
-            clearInterval(that.timer );
-            i=0;
+        if (i >= that.object.length) {
+            clearInterval(that.timer);
+            i = 0;
         }
-    },300)
+    }, 300)
 }
-
 
 
 /**
@@ -664,8 +641,8 @@ C_fish.prototype.Animate = function () {
  *          比如火箭发射 初始有一个或图案由小变大的过程
  * @constructor
  */
-function C_actor(id,classF,num,settime,Callback,backnumber,startnumber) {
-    this.Object=document.getElementById(id);
+function C_actor(id, classF, num, settime, Callback, backnumber, startnumber) {
+    this.Object = document.getElementById(id);
     this.Onoff = false;
     this.classF = classF;
     this.num = num;
@@ -681,20 +658,20 @@ C_actor.prototype.itsleft = function () {
     return $(this.Object).offset().left;
 };
 
-C_actor.prototype.startAnimation =function () {
-    var i= this.start;
-    var  that =this;
-    that.timer=setInterval(function(){
+C_actor.prototype.startAnimation = function () {
+    var i = this.start;
+    var that = this;
+    that.timer = setInterval(function () {
         i++;
-        that.Object.className = that.classF +i;
+        that.Object.className = that.classF + i;
         // console.log()
         //如果有回调函数那在动画完了之后 关闭动画  开始回调函数
-        if(i>=that.num){
+        if (i >= that.num) {
 
-            if(that.callback) {
+            if (that.callback) {
                 clearInterval(that.timer);
                 that.callback();
-            }else {
+            } else {
                 // if(that.backnumber){
                 //     i=that.backnumber;
                 // }else{
@@ -704,27 +681,27 @@ C_actor.prototype.startAnimation =function () {
             }
         }
 
-    },that.setTime)
+    }, that.setTime)
 };
 
-var O_meetCar1 = new F_crashActor('Car1',function(){
-        Baiduyun_Ani();
+var O_meetCar1 = new F_crashActor('Car1', function () {
+    Baiduyun_Ani();
     F_displayWords(words[5]);
     O_meetBigCar.meet();
 });
 
 
-var O_meetBigCar = new F_crashActor('BigCarArea',function () {
-    setTimeout(function(){
+var O_meetBigCar = new F_crashActor('BigCarArea', function () {
+    setTimeout(function () {
         BigCar_Ani();
         F_displayWords(words[6]);
-    },1000);
+    }, 1000);
 
     O_meetTv.meet();
 
 });
 
-var O_meetTv = new F_crashActor('bigTvArea',function () {
+var O_meetTv = new F_crashActor('bigTvArea', function () {
     F_displayWords(words[7]);
     TV_show();
 });
@@ -732,75 +709,71 @@ var O_meetTv = new F_crashActor('bigTvArea',function () {
 // O_Car1Img.Object.style.backgroundImage = O_Car1Imgsrc;
 
 
-
-
-
-
-
-
 function Baiduyun_Ani() {
     F_removeKeyListener(walkstyle1, walkstyle5, walkstyle5);
     setTimeout(function () {
         F_addKeyListener(walkstyle1, walkstyle5, walkstyle5);
-    },2000);
-    $('#Car1Img').animate({'left':'100'},1000,'linear',function(){
-        $('#Fandou').css({'transform':'rotate(-30deg)'});
+    }, 2000);
+    $('#Car1Img').animate({'left': '100'}, 1000, 'linear', function () {
+        $('#Fandou').css({'transform': 'rotate(-30deg)'});
 
-        $('#FandouTanhuang').css({'transform':'rotate(60deg)'});
+        $('#FandouTanhuang').css({'transform': 'rotate(60deg)'});
 
 
-        $('#Baiduyun').css({'transform':'rotate(-90deg)'}).animate({'bottom':0,'left':'-60'},{'duration':500,'queue':false},'linear');
+        $('#Baiduyun').css({'transform': 'rotate(-90deg)'}).animate({'bottom': 0, 'left': '-60'}, {
+            'duration': 500,
+            'queue': false
+        }, 'linear');
         $('#Baiduyun')
     });
-    $('#Baiduyun').animate({'left':'48px'},1000,'linear');
+    $('#Baiduyun').animate({'left': '48px'}, 1000, 'linear');
 
-    $('.Luntai').css({'transform':'rotate(-360deg)'});
+    $('.Luntai').css({'transform': 'rotate(-360deg)'});
 }
 
 
-function  BigCar_Ani() {
+function BigCar_Ani() {
     F_removeKeyListener(walkstyle1, walkstyle5, walkstyle5);
     setTimeout(function () {
         F_addKeyListener(walkstyle1, walkstyle5, walkstyle5);
-    },2000);
-    $('#BigCar').css({'left':0});
-    $('.Luntai2').css({'transform':'rotate(-270deg)'});
+    }, 2000);
+    $('#BigCar').css({'left': 0});
+    $('.Luntai2').css({'transform': 'rotate(-270deg)'});
 }
 function TV_show() {
     var Movie4 = document.getElementById('dpa4');
     setTimeout(function () {
         F_removeKeyListener(walkstyle1, walkstyle5, walkstyle5);
         $('#dpa1').hide();
-        $('#TVbtn2').css({'transform':'rotate(30deg)'})
-    },1000);
+        $('#TVbtn2').css({'transform': 'rotate(30deg)'})
+    }, 1000);
 
     setTimeout(function () {
         $('#dpa2').hide();
-        $('#TVbtn2').css({'transform':'rotate(60deg)'})
+        $('#TVbtn2').css({'transform': 'rotate(60deg)'})
         F_addKeyListener(walkstyle1, walkstyle5, walkstyle5);
-    },2000);
+    }, 2000);
 
     setTimeout(function () {
         $('#dpa3').hide();
-        $('#TVbtn2').css({'transform':'rotate(90deg)'})
+        $('#TVbtn2').css({'transform': 'rotate(90deg)'})
 
-    },3000);
+    }, 3000);
 
     setTimeout(function () {
-        Movie4.style.background= 'url(./img/dataDEMO/construction/TVshow/jobs.gif) no-repeat';
+        Movie4.style.background = 'url(./img/dataDEMO/construction/TVshow/jobs.gif) no-repeat';
         Movie4.style.backgroundColor = '#fff';
         Movie4.style.backgroundPositionX = '-40px';
-    },3000);
+    }, 3000);
 }
 
 
-
-function F_rocketFly(){
-    clearInterval( O_sky.timer );
-    $('#fire1').animate({'opacity':1,'top':834},1000,'linear',function () {
+function F_rocketFly() {
+    clearInterval(O_sky.timer);
+    $('#fire1').animate({'opacity': 1, 'top': 834}, 1000, 'linear', function () {
 
     });
-    $('.fireFlame').animate({'opacity':1,'top':820},1000,'linear',function () {
+    $('.fireFlame').animate({'opacity': 1, 'top': 820}, 1000, 'linear', function () {
         clearInterval(fire2.timer);
         clearInterval(fire3.timer);
         fire3.startAnimation();
@@ -809,56 +782,57 @@ function F_rocketFly(){
     });
 
 
+    setTimeout(
+        function () {
+            $('.fireFlame').animate({'opacity': 0}, 1000, 'linear', function () {
+                    clearInterval(fire2.timer);
+                    clearInterval(fire3.timer);
+                    $('#rocket2').animate({'top': 1200/*,'left':-190,'height':'-=910px','width':'-=370px'*/}, 10000, 'easeInQuart');
+                }
+            );
+
+        }, 22000);
+
 
     setTimeout(
-        function(){$('.fireFlame').animate({'opacity':0},1000,'linear',function(){
-                clearInterval(fire2.timer);
-                clearInterval(fire3.timer);
-                $('#rocket2').animate({'top':1200/*,'left':-190,'height':'-=910px','width':'-=370px'*/},10000,'easeInQuart');
+        function () {
+            $('#fire1').animate({'opacity': 0, top: 700}, 1000, 'linear', function () {
+                    clearInterval(fire1.timer);
+                    $('#rocket1').animate({'top': 1200/*,'left':-190,'height':'-=910px','width':'-=254px'*/}, 10000, 'easeInQuart');
+                    $('#air-plane').css({'transform': 'rotate(75 deg)'});
+                }
+            )
+        }, 62000);
+
+
+    setTimeout(function () {
+        O_sky.timer = setInterval(function () {
+            n += 20;
+            O_sky.style.top = O_sky.offsetTop + 20 + 'px';
+            O_skyAddon.style.top = O_skyAddon.offsetTop + 20 + 'px';
+            // CaodiAndDadi.style.top = CaodiAndDadi.offsetTop+20+'px';
+            O_Sea.style.top = O_Sea.offsetTop + 20 + 'px';
+            O_DaF.style.top = O_DaF.offsetTop + 20 + 'px';
+            O_DaW.style.top = O_DaW.offsetTop + 20 + 'px';
+            if ($(O_rocket).offset().top - 104 <= $('#sky5').offset().top) {
+                if (!O_csky5.Onoff) {
+                    $('#sky5').vidbg({
+                        'mp4': './img/earth.mp4',
+                        'webm': './img/earth.webm',
+                    }, {
+                        // Options
+                        muted: true,
+                        loop: true,
+                        overlay: true,
+                    });
+                    O_csky5.Onoff = true;
+                }
             }
-        );
-
-        },22000);
-
-
-    setTimeout(
-        function(){$('#fire1').animate({'opacity':0,top:700},1000,'linear',function(){
-                clearInterval(fire1.timer);
-                $('#rocket1').animate({'top':1200/*,'left':-190,'height':'-=910px','width':'-=254px'*/},10000,'easeInQuart');
-                $('#air-plane').css({'transform':'rotate(75 deg)'});
+            if ($(O_rocket).offset().top - 74 <= $('#sky5').offset().top) {
+                clearInterval(O_sky.timer)
             }
-        )
-        },62000);
-
-
-setTimeout(function () {
-    O_sky.timer = setInterval(function(){
-        n+=20;
-        O_sky.style.top = O_sky.offsetTop+20+'px';
-        O_skyAddon.style.top = O_skyAddon.offsetTop+20+'px';
-        // CaodiAndDadi.style.top = CaodiAndDadi.offsetTop+20+'px';
-        O_Sea.style.top = O_Sea.offsetTop+20+'px';
-        O_DaF.style.top = O_DaF.offsetTop+20+'px';
-        O_DaW.style.top = O_DaW.offsetTop+20+'px';
-        if($(O_rocket).offset().top-104 <=$('#sky5').offset().top){
-            if(!O_csky5.Onoff) {
-                $('#sky5').vidbg({
-                    'mp4': './img/earth.mp4',
-                    'webm': './img/earth.webm',
-                }, {
-                    // Options
-                    muted: true,
-                    loop: true,
-                    overlay: true,
-                });
-                O_csky5.Onoff = true;
-            }
-        }
-        if($(O_rocket).offset().top-74 <=$('#sky5').offset().top){
-            clearInterval(O_sky.timer)
-        }
-    },20);
-},3000);
+        }, 20);
+    }, 3000);
 
 
 }
@@ -867,45 +841,43 @@ setTimeout(function () {
 /* fireFlame fire2-*/
 
 
+var fire1 = new C_actor('fire1', 'fire1  fire1-', 27, 20, '', '', 0);
 
-
-var fire1 = new C_actor('fire1','fire1  fire1-',27,20,'','',0);
-
-var fire2 = new C_actor('fire2','fireFlame fire2-',15,120,function () {
+var fire2 = new C_actor('fire2', 'fireFlame fire2-', 15, 120, function () {
     clearInterval(fire2.timer);
     fire2_2.startAnimation();
-},'',0);
-var fire2_2 = new C_actor('fire2','fireFlame fire2-',27,100,'',15,15);
-var fire3 = new C_actor('fire3','fireFlame fire2-',15,120,function () {
+}, '', 0);
+var fire2_2 = new C_actor('fire2', 'fireFlame fire2-', 27, 100, '', 15, 15);
+var fire3 = new C_actor('fire3', 'fireFlame fire2-', 15, 120, function () {
     clearInterval(fire3.timer);
     fire3_2.startAnimation();
-},'',0);
-var fire3_2 = new C_actor('fire3','fireFlame fire2-',27,100,'',15,15);
+}, '', 0);
+var fire3_2 = new C_actor('fire3', 'fireFlame fire2-', 27, 100, '', 15, 15);
 
 //数据动画部分
 
 
 // clearInterval(obj.timer);
 
-function F_meettheAbout(){
-    F_meettheWall(O_about,false,-400);
+function F_meettheAbout() {
+    F_meettheWall(O_about, false, -400);
     var OT_meetAboutTimer = setInterval(
-        function(){
-            if (!O_about.Onoff){
+        function () {
+            if (!O_about.Onoff) {
                 clearInterval(OT_meetAboutTimer);
                 clearInterval(O_about.timer);
                 F_displayWords(words[1]);
                 F_animateAbout();
                 F_meettheChengdu();
             }
-        },20);
+        }, 20);
 }
 
 
-function F_animateAbout(){
-    $('#Code-mill').animate({'bottom': '240px'}, 500, 'easeOutElastic',function () {
-        $('#Design-mill').animate({'bottom': '120px'}, 500, 'easeOutElastic',function () {
-            $('#Animation-mill').animate({'bottom': '240px'}, 500, 'easeOutElastic',function () {
+function F_animateAbout() {
+    $('#Code-mill').animate({'bottom': '240px'}, 500, 'easeOutElastic', function () {
+        $('#Design-mill').animate({'bottom': '120px'}, 500, 'easeOutElastic', function () {
+            $('#Animation-mill').animate({'bottom': '240px'}, 500, 'easeOutElastic', function () {
                 $('#Exercise-mill').animate({'bottom': '370px'}, 500, 'easeOutElastic').addClass('rotateMill4');
                 $('#mill-pole4').animate({'height': '470px'}, 500, 'easeOutElastic');
             }).addClass('rotateMill3');
@@ -918,15 +890,13 @@ function F_animateAbout(){
     $('#mill-pole1').animate({'height': '340px'}, 500, 'easeOutElastic');
 
 
-
-
 }
 
-function  F_meettheChengdu(){
-    F_meettheWall(O_chengdu,false,400);
+function F_meettheChengdu() {
+    F_meettheWall(O_chengdu, false, 400);
     var OT_meetChengduTimer = setInterval(
-        function(){
-            if (!O_chengdu.Onoff){
+        function () {
+            if (!O_chengdu.Onoff) {
                 clearInterval(OT_meetChengduTimer);
                 clearInterval(O_about.timer);
 
@@ -937,15 +907,11 @@ function  F_meettheChengdu(){
                 F_removeKeyListener(walkstyle1, walkstyle2, walkstyle2);
                 setTimeout(function () {
                     F_addKeyListener(walkstyle1, walkstyle2, walkstyle2);
-                },2000)
+                }, 2000)
 
             }
-        },20);
+        }, 20);
 }
-
-
-
-
 
 
 function F_animateChengdu() {
@@ -959,11 +925,11 @@ function F_animateChengdu() {
     $('#text').animate({'opacity': 1}, 7000, 'linear');
 }
 
-function  F_meettheSchool(){
-    F_meettheWall(O_school,false,1080);
+function F_meettheSchool() {
+    F_meettheWall(O_school, false, 1080);
     var OT_meetschoolTimer = setInterval(
-        function(){
-            if (!O_school.Onoff){
+        function () {
+            if (!O_school.Onoff) {
                 clearInterval(OT_meetschoolTimer);
                 F_displayWords(words[3]);
                 $('#stationery').show();
@@ -973,9 +939,9 @@ function  F_meettheSchool(){
                 F_removeKeyListener(walkstyle1, walkstyle2, walkstyle2);
                 setTimeout(function () {
                     F_addKeyListener(walkstyle1, walkstyle2, walkstyle2);
-                },2000)
+                }, 2000)
             }
-        },20);
+        }, 20);
 }
 
 
@@ -1047,114 +1013,120 @@ function F_buildschool() {
 
 
 function F_stationery() {
-    $('#book1').css({'bottom':'-10%','transform':'rotate(45deg)'});
-    $('#book2').css({'bottom':'-10%','transform':'rotate(-45deg)'});
-    $('#jiazi').css({'left':'90%','transform':'rotate(45deg)'});
-    $('#knife').css({'bottom':'0%','transform':'rotate(-45deg)'});
-    $('#magnify').css({'bottom':'0%','transform':'rotate(-45deg)'});
-    $('#notebook').css({'left':'0','transform':'rotate(45deg)'});
-    $('#ruler1').css({'right':'0','transform':'rotate(45deg)'});
-    $('#ruler2').css({'left':'-10%','transform':'rotate(80deg)'});
-    $('#timer').css({'bottom':'0%','transform':'rotate(45deg)'});
-    $('#yuangui').css({'right':'0','transform':'rotate(45deg)'});
-    $('#pencil').css({'right':'0','transform':'rotate(-45deg)'});
-    $('#upan').css({'left':'0','transform':'rotate(-45deg)'});
+    $('#book1').css({'bottom': '-10%', 'transform': 'rotate(45deg)'});
+    $('#book2').css({'bottom': '-10%', 'transform': 'rotate(-45deg)'});
+    $('#jiazi').css({'left': '90%', 'transform': 'rotate(45deg)'});
+    $('#knife').css({'bottom': '0%', 'transform': 'rotate(-45deg)'});
+    $('#magnify').css({'bottom': '0%', 'transform': 'rotate(-45deg)'});
+    $('#notebook').css({'left': '0', 'transform': 'rotate(45deg)'});
+    $('#ruler1').css({'right': '0', 'transform': 'rotate(45deg)'});
+    $('#ruler2').css({'left': '-10%', 'transform': 'rotate(80deg)'});
+    $('#timer').css({'bottom': '0%', 'transform': 'rotate(45deg)'});
+    $('#yuangui').css({'right': '0', 'transform': 'rotate(45deg)'});
+    $('#pencil').css({'right': '0', 'transform': 'rotate(-45deg)'});
+    $('#upan').css({'left': '0', 'transform': 'rotate(-45deg)'});
 }
 
 
 function F_stationeryHide() {
-    $('#book1').css({'bottom':'-80%','transform':'rotate(0)'});
-    $('#book2').css({'bottom':'-80%','transform':'rotate(0)'});
-    $('#jiazi').css({'left':'120%','transform':'rotate(0)'});
-    $('#knife').css({'bottom':'-30%','transform':'rotate(0)'});
-    $('#magnify').css({'bottom':'-30%','transform':'rotate(0)'});
-    $('#notebook').css({'left':'-10%','transform':'rotate(0)'});
-    $('#ruler1').css({'right':'-20%','transform':'rotate(0)'});
-    $('#ruler2').css({'left':'-40%','transform':'rotate(0)'});
-    $('#timer').css({'bottom':'-20%','transform':'rotate(0)'});
-    $('#yuangui').css({'right':'-10%','transform':'rotate(0)'});
-    $('#pencil').css({'right':'-10%','transform':'rotate(0)'});
-    $('#upan').css({'left':'-10%','transform':'rotate(0)'});
-    setTimeout(function(){
-        $('#stationery').hide();
-        },100
+    $('#book1').css({'bottom': '-80%', 'transform': 'rotate(0)'});
+    $('#book2').css({'bottom': '-80%', 'transform': 'rotate(0)'});
+    $('#jiazi').css({'left': '120%', 'transform': 'rotate(0)'});
+    $('#knife').css({'bottom': '-30%', 'transform': 'rotate(0)'});
+    $('#magnify').css({'bottom': '-30%', 'transform': 'rotate(0)'});
+    $('#notebook').css({'left': '-10%', 'transform': 'rotate(0)'});
+    $('#ruler1').css({'right': '-20%', 'transform': 'rotate(0)'});
+    $('#ruler2').css({'left': '-40%', 'transform': 'rotate(0)'});
+    $('#timer').css({'bottom': '-20%', 'transform': 'rotate(0)'});
+    $('#yuangui').css({'right': '-10%', 'transform': 'rotate(0)'});
+    $('#pencil').css({'right': '-10%', 'transform': 'rotate(0)'});
+    $('#upan').css({'left': '-10%', 'transform': 'rotate(0)'});
+    setTimeout(function () {
+            $('#stationery').hide();
+        }, 100
     );
 }
 
 
 function F_animateBachelor() {
-    $('#bachelor').animate({'left': 75,
-    'top': 116,'opacity':1},1000,'easeOutBounce');
+    $('#bachelor').animate({
+        'left': 75,
+        'top': 116, 'opacity': 1
+    }, 1000, 'easeOutBounce');
     $('#schoolhatimg').addClass('bachelorIMG');
-    setTimeout(function(){
+    setTimeout(function () {
 
         $('#bachelor').animate({
-            'top': 90},100,'easeOutBounce');
-        $('#SchoolHatImg').addClass('boomIMG').removeClass('bachelorIMG');},2400);
-    setTimeout(function(){
+            'top': 90
+        }, 100, 'easeOutBounce');
+        $('#SchoolHatImg').addClass('boomIMG').removeClass('bachelorIMG');
+    }, 2400);
+    setTimeout(function () {
         $('#bachelor').animate({
-            'top': 116},1000,'easeOutBounce');
-        $('#SchoolHatImg').addClass('helmetIMG').removeClass('boomIMG');},2500);
+            'top': 116
+        }, 1000, 'easeOutBounce');
+        $('#SchoolHatImg').addClass('helmetIMG').removeClass('boomIMG');
+    }, 2500);
 }
 
 
 function F_flyhelmet() {
-    $('#bachelor').animate({'left':0,
-        'top': '-1300%' ,'opacity':0},2000,'linear');
+    $('#bachelor').animate({
+        'left': 0,
+        'top': '-1300%', 'opacity': 0
+    }, 2000, 'linear');
 }
 
 function F_displayWords(which) {
     clearInterval(wordTimer2);
     clearInterval(wordTimer);
     clearTimeout(wordTimeOut);
-    $('#displayword').css({'bottom':'-80%'});
-    iWord.innerHTML= '';
+    $('#displayword').css({'bottom': '-80%'});
+    iWord.innerHTML = '';
     var index = 0;
     var length = which.length;
 
-    wordTimer2 =setInterval(function () {
+    wordTimer2 = setInterval(function () {
         toggleGBClass();
-    },200);
+    }, 200);
 
-    function start(){
-        iWord.innerHTML= '';
+    function start() {
+        iWord.innerHTML = '';
 
-        wordTimer=setInterval(function(){
-            iWord.innerHTML +=which.charAt(index);
-            if(index++ === length){
+        wordTimer = setInterval(function () {
+            iWord.innerHTML += which.charAt(index);
+            if (index++ === length) {
                 clearInterval(wordTimer);
 
                 wordTimeOut = setTimeout(function () {
-                    $('#displayword').css({'bottom':'-100%'});
-                },3000)
+                    $('#displayword').css({'bottom': '-100%'});
+                }, 3000)
             }
 
-        },100);
+        }, 100);
     }
-
-
 
 
     start();
 
     function toggleGBClass() {
-        if(O_Guangbiao.className =='show'){
-            O_Guangbiao.className ='hide';
-        }else {
-            O_Guangbiao.className ='show';
+        if (O_Guangbiao.className == 'show') {
+            O_Guangbiao.className = 'hide';
+        } else {
+            O_Guangbiao.className = 'show';
         }
     }
 }
 
 
-function F_meetsteelRight(){
+function F_meetsteelRight() {
 
     var n = parseFloat($(O_karl).offset().left);
     O_brickWall.timer = setInterval(function () {
-        if (n <= parseFloat($(O_brickWall).offset().left) ) {
+        if (n <= parseFloat($(O_brickWall).offset().left)) {
             O_brickWall.Onoff = false;//如果从右到左 的时候
             console.log('到了左边了')
-            clearInterval( O_brickWall.timer);
+            clearInterval(O_brickWall.timer);
         } else {
             O_brickWall.Onoff = true;
         }
