@@ -625,7 +625,7 @@ C_fish.prototype.Animate = function () {
             i = 0;
         }
     }, 300)
-}
+};
 
 
 /**
@@ -1125,7 +1125,7 @@ function F_meetsteelRight() {
     O_brickWall.timer = setInterval(function () {
         if (n <= parseFloat($(O_brickWall).offset().left)) {
             O_brickWall.Onoff = false;//如果从右到左 的时候
-            console.log('到了左边了')
+            console.log('到了左边了');
             clearInterval(O_brickWall.timer);
         } else {
             O_brickWall.Onoff = true;
